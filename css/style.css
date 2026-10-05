@@ -1,0 +1,74 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0f1923;
+  --surface: #1b2733;
+  --surface-alt: #243445;
+  --border: #33475b;
+  --text: #ece8e1;
+  --muted: #b0bbc6;
+  --accent: #ff4655;
+  --accent-hover: #ff7480;
+  --accent-text: #ff7480;
+  --on-accent: #0f1923;
+  --footer-bg: #0a1118;
+  --footer-muted: #94a3b8;
+
+  --font-body: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: Bahnschrift, "Roboto Condensed", "Arial Narrow", "Segoe UI", sans-serif;
+
+  --pad: 0.75rem;
+  --inset: 1.5rem;
+  --gap: 1.5rem;
+  --radius: 0.5rem;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  width: 100%;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-heading); line-height: 1.2; }
+h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+h3 { font-size: 1.25rem; }
+
+:focus-visible { outline: 3px solid var(--accent-hover); outline-offset: 3px; }
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  transform: translateY(-150%);
+  left: var(--pad);
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 700;
+  z-index: 10;
+}
+.skip-link:focus { top: var(--pad); transform: none; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.site-header {
+  display: flex;
